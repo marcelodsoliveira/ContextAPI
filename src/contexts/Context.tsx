@@ -24,7 +24,7 @@ const mainReducer = (state: initialStateType, action: reducerActionType) => ({
   user: userReducer(state.user, action)
 });
 
-export const ContextProvider: React.FC = ({ children }) => {
+export const ContextProvider: React.FC = ({ children }: React.PropsWithChildren) => {
   const [state, dispatch] = useReducer(mainReducer, initialState)
   
   return (
